@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<section class="image-box">
+  <header class="background">
+ <link
+	rel="stylesheet"
+	href="{{ url_for('static', filename='css/webpage.css') }}">
+<script src="{{ url_for('static', filename='js/webpage.js') }}"></script>
+<title>All is well</title>
+
+    <div class="top"></div>
+    <div class="logo">
+      <h3>All is well</h3>
+    </div>
+    
+    <div class="home_layout">
+    	<!--<h1 class="video">Video</h1>-->
+
+	<!--test-->
+	<div class="video" id="container">
+	    <img src="{{ url_for('video_feed') }}">
+	</div>
+	<script>
+	/*var video = document.querySelector("#videoElement");
+	 
+	if (navigator.mediaDevices.getUserMedia) {
+	  navigator.mediaDevices.getUserMedia({ video: true })
+	    .then(function (stream) {
+	      video.srcObject = stream;
+	    })
+	    .catch(function (err0r) {
+	      console.log("Something went wrong!");
+	    });
+	}*/
+	//새로고침
+	setTimeout(function(){
+		location.reload();}, 1000);
+	</script>
+	<!---->
+	<div class="status_container">
+		<h1 class="title" id="home"> <span>STATUS</span> </h1>
+		<!--start-->
+		<p class="state0" id="state"> {{states[3]}}</p>
+		<!--end-->
+		<p class="state" id="state"> {{states[2]}}</p>
+		<p class="state" id="state"> {{states[1]}}</p>
+		<p class="state" id="state"> {{states[0]}}</p>
+		{% if states[3] == "Bad Posture" %}
+			<script>document.body.style.backgroundColor='#FA5858';</script>
+		{% elif states[3] == "Bad Posture" %}
+			<script>document.body.style.backgroundColor='#FA5858';</script>
+		{% else %}
+			<script>document.body.style.backgroundColor='#FFFFFF';</script>
+		{% endif %}    
+	</div>
+    </div>
+
+  </header>
+</section>
+
